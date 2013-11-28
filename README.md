@@ -1,5 +1,8 @@
 # Demostration of R's [Shiny][shi]
-     R -e "shiny::runGitHub('shiny-demo', 'clebio')"
+
+Shiny <= Rcpp <= R 3.0.x
+
+    R -e "shiny::runGitHub('shiny-demo', 'clebio')"
 
 ## Anscombe's Quartet
     summary(anscombe)
