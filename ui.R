@@ -1,20 +1,19 @@
 library(shiny)
 
 shinyUI( pageWithSidebar(
-  headerPanel("Hello Shiny!"),
+  headerPanel("Anscombe's Quartet"),
   sidebarPanel(
     h3("Input"),
     #helpText("Interactive input"),
-    sliderInput("obs", 
-                "Number of observations:", 
-                min = 1,
-                max = 1000, 
-                value = 500)
-  ),
+    sliderInput("csize", 
+                "Size of plots:", 
+                min = 200,
+                max = 800, 
+                value = 400,
+                step=200)
+    ),
   mainPanel(
-    h3("Summary Statistics"),
-    tableOutput("table"),
-    h3("Visual Summary"),
-    plotOutput("distPlot")
-  )
+    h3("Summary Tables and Charts"),
+    uiOutput("plots") # This is the dynamic UI for the plots
+    )
 ))
