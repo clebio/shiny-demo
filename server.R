@@ -1,4 +1,5 @@
 library(shiny)
+library(ggplot2)
 
 shinyServer(function(input, output) {
   output$table <- renderTable({
@@ -22,10 +23,11 @@ shinyServer(function(input, output) {
       xi <- paste("x", my_i, sep="")
       yi <- paste("y", my_i, sep="")
       df = data.frame(anscombe[xi], anscombe[yi])
+      names(df) <- c('x', 'y')
 
       output[[tablename]] <- renderPrint({ summary(df) })
       output[[plotname]] <- renderPlot({
-        plot(df, xlim=c(0, max(anscombe)), ylim=c(0, max(anscombe)), main = paste("anscombe set", my_i))
+        print(ggplot(df, aes(x=x, y=y)) + geom_point() + xlim(0, max(df['x'])) + ylim(0, max(df['y'])))
       })
     })
   }
