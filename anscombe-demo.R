@@ -33,8 +33,8 @@ par(op)
 ## Another example, verbatim from: http://blog.ouseful.info/2011/08/30/the-visual-difference-%E2%80%93-r-and-anscombe%E2%80%99s-quartet/
 
 mydata=with(anscombe,data.frame(xVal=c(x1,x2,x3,x4), yVal=c(y1,y2,y3,y4), group=gl(4,nrow(anscombe))))
-aggregate(.~mygroup,data=mydata,mean)
-aggregate(.~mygroup,data=mydata,sd)
+aggregate(.~group,data=mydata,mean)
+aggregate(.~group,data=mydata,sd)
 library(ggplot2)
-ggplot(mydata,aes(x=xVal, y=yVal)) + geom_point() + facet_wrap(~mygroup)
+ggplot(mydata,aes(x=xVal, y=yVal)) + geom_point() + facet_wrap(~group)
 ### Note the reference to https://public.opencpu.org/
