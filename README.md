@@ -1,7 +1,9 @@
 # Demostration of R's [Shiny][shi]
 
+##Prerequisites
 Shiny <= Rcpp <= R 3.0.x
 
+##Running the code
     R -e "shiny::runGitHub('shiny-demo', 'clebio')"
 
 ## Anscombe's Quartet
@@ -9,28 +11,23 @@ Shiny <= Rcpp <= R 3.0.x
 
 [Anscombe's quartet][ansc] is a [pathological][patho] dataset designed to illustrate the danger of summary statistics... or of not looking at enough descriptors... or rather, it illustrates the role visualization plays in exploratory analysis.
 
-## Visualizing Data
+##Quick overview of Shiny
+[*Shiny has Updates!*][new_shine]
 
-## Iteration. Fast iteration cycle
+- server.R
+- ui.R
 
-  - Traditional statistics (and small data sets)
-  - Visualizing data (as well as large data sets and powerful computers)
+- Widgets
+- Standard R libraries (ggplot, etc.)
+- Responsive components
+- Reactive elements
 
-Modern data analysis. [Data Analysis With Open Source Tools][janert]
+##Extensions
 
-## A Modern Quartet?
-An equivalent to Anscombe's quartet in higher dimensions. Visualization only gets you so far, and thus a battery of statistical tests is still quite necessary.
+- Database connections
+- client/server deployment
 
-  - Sparse data in high dimensions; the curse of dimensionality
-  - PCA and the mistake of fitting in too few dimensions
-
-### A Python Equivalent?
-[IPython Notebooks][inote]
-Continuum Analytics' [Bokeh][bokeh] (with [Anscombe example](http://bokeh.pydata.org/plot_gallery/anscombe.html), no less!)
-
-### Colophon
-Presentation slides use [Reveal.js][rev]
-
+[new_shine]: http://shiny.rstudio.com/tutorial/
 [ansc]:https://en.wikipedia.org/wiki/Anscombe's_quartet
 [shi]:http://rstudio.github.io/shiny/tutorial/
 [janert]:http://shop.oreilly.com/product/9780596802363.do
